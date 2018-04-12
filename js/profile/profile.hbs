@@ -1,0 +1,57 @@
+{{#if this}}
+    <div id="details" class="tab active">
+        <div class="content-block">
+            <div class="list-block login_block block-spacing">
+                <ul id="blue_icons">
+                    <li class="item-content">
+                        <div class="item-inner item-colors">
+                            <div class="smaller-label item-title label"><i class="fa fa-user"
+                                                                           style="font-size: 20px;"></i>
+                            </div>
+                            <div class="item-input">
+                                <input type="text" name="Mobile phone" id="user_name_edit"
+                                       value="{{ name }}"
+                                       placeholder="User name">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-content">
+                        <div class="item-inner item-colors">
+                            <div class="smaller-label item-title label"><i class="fa fa-phone"
+                                                                           style="font-size: 20px;"></i>
+                            </div>
+                            <div class="item-input">
+                                <input type="text" name="Work phone" id="mobile_phone_edit"
+                                       value="{{ phone }}"
+                                       placeholder="Mobile phone">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner item-colors">
+                            <div class="smaller-label item-title label"><i class="fa fa-envelope-o"
+                                                                           style="font-size: 20px;"></i>
+                            </div>
+                            <div class="item-input">
+                                <input type="text" name="Email" id="email_edit"
+                                       placeholder="E-mail address"
+                                       value="{{ email }}">
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="list-block">
+                <ul>
+                    <li><a href="javascript:void(0)" id="btnEditDetails"
+                           class="button button-medium button-fill color-blue"
+                           style="margin-top: 10px;">UPDATE</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{{/if}}

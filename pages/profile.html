@@ -1,0 +1,107 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <!-- Page, "data-page" contains page name -->
+    <div data-page="profile" class="page">
+
+        <!-- Top Navbar. In Material theme it should be inside of the page-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left sliding">
+                    <a href="#" class="back link">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="center color-deeppurple">PROFILE</div>
+            </div>
+        </div>
+        <!-- Scrollable page content -->
+        <div class="page-content">
+            <div class="card" style="margin: 0px; box-shadow: none; border-radius: 0px;">
+                <div class="card-content">
+                    <div class="card-content-inner" style="padding-bottom: 0px;">
+                        <i class="fa fa-edit" aria-hidden="true" style="color: #007aff;font-weight: 600;"></i>
+                        &nbsp;<b
+                            class="color-blue" style="font-size: 16px;">Edit Profile</b>
+
+                        <p class="color-gray" style="margin: 0px;">Make changes to Profile Details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin: 0px; box-shadow: none; border-radius: 0px;">
+                <div class="buttons-row"
+                     style="padding: 10px; background-color: #fff; border-bottom: 1px solid #f2f2f2;">
+                    <!-- Link to 1st tab, active -->
+                    <a href="#personal_details" class="tab-link active button">Details</a>
+                    <!-- Link to 2nd tab -->
+                    <a href="#change_password" class="tab-link button">Password</a>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <!-- Tab 1, active by default -->
+                <div id="personal_details" class="tab active">
+                  loading ...
+                </div>
+                <!-- Tab 2 -->
+                <div id="change_password" class="tab">
+                    <div class="content-block">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="margin: 0px; font-size: 15px;">Reset Password</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="list-block login_block block-spacing">
+                                    <ul id="blue_icons">
+                                        <li class="item-content">
+                                            <div class="item-inner item-colors">
+                                                <div class="smaller-label item-title label"><i class="fa fa-lock"
+                                                                                               style="font-size: 15px;"></i>
+                                                </div>
+                                                <div class="item-input">
+                                                    <input type="password" name="Current password"
+                                                           id="current_password"
+                                                           placeholder="Current password">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-inner item-colors">
+                                                <div class="smaller-label item-title label"><i class="fa fa-lock"
+                                                                                               style="font-size: 15px;"></i>
+                                                </div>
+                                                <div class="item-input">
+                                                    <input type="password" name="New Password" id="new_password"
+                                                           placeholder="New Password">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-inner item-colors" style="border-bottom: 0px;">
+                                                <div class="smaller-label item-title label"><i class="fa fa-lock"
+                                                                                               style="font-size: 15px;"></i>
+                                                </div>
+                                                <div class="item-input">
+                                                    <input type="password" name="Confirm password"
+                                                           id="confirm_new_password"
+                                                           placeholder="Confirm password">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-block">
+                            <ul>
+                                <li><a href="#" id="btnChangePassword"
+                                       class="button button-medium button-fill color-blue"
+                                       style="margin-top: 10px; border-radius: 0px;">CHANGE PASSWORD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

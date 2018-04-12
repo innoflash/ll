@@ -1,0 +1,35 @@
+{{#if this}}
+    <ul>
+        {{#each this}}
+            <li class="card card-mar0-op7">
+                <div class="card-content"  id="openDate" date_id="{{ _id }}" date="{{ _date }}">
+                    <div class="card-content-inner" style="padding: 5px;">
+                        <div class="row no-gutter">
+                            <a class="col-15" href="pages/date.html?id={{ _id }}">
+                                <img src="img/m4.jpg"
+                                     alt=""
+                                     style="width: 66%; padding: 4px; border-radius: 50%;"/>
+                            </a>
+                            <a class="col-75" href="pages/date.html?id={{ _id }}">
+                                <p class="color-blue" style="margin: 0px;">
+                                    {{ author }}
+                                </p>
+
+                                <p class="color-gray" style="margin: 0px;">
+                                    <small>
+                                        {{ title }}
+                                    </small>
+                                </p>
+                            </a>
+                            <div class="col-10">
+                                <a href="#" class="button" style="padding: 0px;">
+                                    {{ _date }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}

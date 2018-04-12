@@ -1,0 +1,24 @@
+{{#if this}}
+    <div class="row no-gutter">
+        {{#each this}}
+            <div class="col-50">
+                <div class="card demo-card-header-pic">
+                    <div style="background-image:url(img/m3.jpg)" valign="bottom"
+                         class="card-header color-white no-border">{{ name }} Issue
+                    </div>
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <p class="color-gray">{{ name }} Issue</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="link"></a>
+                        <a href="javascript:void(0)" id="readButton" class="link"
+                           lighter_name="{{ name }}"
+                           lighter_id="{{ lighter_id }}">Open</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}

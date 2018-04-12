@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>Life Lighter</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+    -->
+
+    <link rel="stylesheet" href="lib/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/framework7.keypad.min.css">
+    <link rel="stylesheet" href="css/welcomescreen.css">
+    <link rel="stylesheet" href="css/framework7.upscroller.css">
+    <link rel="stylesheet" href="css/framework7.3dpanels.min.css">
+</head>
+
+<body>
+
+<!-- Left Panel with Reveal effect -->
+<div class="panel panel-left panel-reveal r8em-menu-panel theme-white">
+
+    <div class="profile-image-container" style="padding-bottom: 10px;">
+        <img id="more_user_image" src="img/icon.png" alt="user" class="profile-image"/>
+
+        <p align="center" id='username' style="margin: 0px;">{{Username}}</p>
+        <a href="pages/profile.html" style="color: #14baf6;">Edit Profile</a>
+    </div>
+
+    <div class="list-block" style="margin: 0px;">
+        <div class="list-group">
+            <ul>
+                <li class="item-content list-panel-all close-panel item-link">
+                    <div class="item-media"><i class="fa fa-home"></i></div>
+                    <div class="item-inner">
+                        <a href="index.html" class="item-title" id="linkHome">Home</a>
+                    </div>
+                </li>
+                <!--<li class="item-content list-panel-all close-panel item-link">
+                    <div class="item-media"><i class="icon ion-ios7-person-outline"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title">My Profile</div>
+                        <div class="comingsoon-flag">COMING</div>
+                    </div>
+                </li>-->
+                <li class="item-content list-panel-all close-panel item-link">
+                    <div class="item-media"><i class="fa fa-shopping-cart"></i></div>
+                    <a class="item-inner"
+                       href="pages/store.html">
+                        <div class="item-title">Store</div>
+                    </a>
+                </li>
+                <li class="item-content list-panel-browse close-panel item-link">
+                    <div class="item-media"><i class="fa fa-balance-scale"></i></div>
+                    <a class="item-inner"
+                       href="pages/account.html">
+                        <div class="item-title">Account</div>
+                    </a>
+                </li>
+                <li class="item-content list-panel-browse close-panel item-link">
+                    <div class="item-media"><i class="fa fa-cogs"></i></div>
+                    <a class="item-inner"
+                       href="pages/settings.html">
+                        <div class="item-title">Settings</div>
+                    </a>
+                </li>
+                <li class="item-content list-panel-browse close-panel item-link">
+                    <div class="item-media"><i class="fa fa-bank"></i></div>
+                    <div class="item-inner">
+                        <a class="item-title" href="pages/services.html">
+                            <div style="color: #000">Services</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="item-content list-panel-saved close-panel item-link">
+                    <div class="item-media"><i class="fa fa-edit"></i></div>
+                    <a class="item-inner" href="pages/reviews.html">
+                        <div class="item-title" id="reviews">Reviews</div>
+                    </a>
+                </li>
+                <li class="item-content list-panel-favorites close-panel item-link">
+                    <div class="item-media"><i class="fa fa-phone"></i></div>
+                    <a class="item-inner" href="pages/contact.html">
+                        <div class="item-title" id="contact">Contact</div>
+                    </a>
+                </li>
+
+                <li class="item-content list-panel-all close-panel item-link">
+                    <div class="item-media"><i class="fa fa-share-alt"></i></div>
+                    <a class="item-inner"
+                       href="javascript:void(0)"
+                       id="inviteOthers">
+                        <div class="item-title">Invite Others</div>
+                        <div class="comingsoon-flag">share</div>
+                    </a>
+                </li>
+                <li class="item-content list-panel-favorites close-panel item-link">
+                    <div class="item-media"><i class="fa fa-info-circle"></i></div>
+                    <a class="item-inner" href="pages/about.html">
+                        <div class="item-title">About</div>
+                    </a>
+                </li>
+                <hr/>
+                <li class="item-content list-panel-all close-panel item-link">
+                    <div class="item-media"><i class="fa fa-lock"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title" id="btnMoreLogOff">Log Off</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+
+        <!-- Top Navbar. In Material theme it should be inside of the page-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center">LIFE LIGHTER</div>
+                <div class="right">
+                    <!-- Right link contains only icon - additional "icon-only" class--><a href="#"
+                                                                                           class="link icon-only open-panel">
+                    <i class="icon icon-bars"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="index" class="page">
+
+
+                <div class="page" data-page="search">
+
+
+                    <!-- Scrollable page content -->
+                    <div class="page-content r8em-page">
+                        <div id="lifelighters">
+                            <img class="full-width-image fixed" src="img/placeholder.png"
+                                 alt="splash"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- login screen -->
+<div class="popup popup-login">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content login_background">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title">Login</div>
+
+                <div class="list-block">
+                    <p><a href="#" id="btnFbSignin" class="button button-big button-fill color-blue"><i
+                            class="fa fa-facebook pull-left vert-middle"></i>Continue with Facebook</a></p>
+
+                    <p><a href="#" id="btnGpSignin" class="button button-big button-fill color-red"><i
+                            class="fa fa-google-plus pull-left vert-middle"></i>Continue with Google</a></p>
+                </div>
+                <form>
+                    <div class="list-block login_block block-spacing">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-mobile-phone"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="text" name="phone" id="phone" placeholder="Phone number">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-lock"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="password" name="password" id="password" placeholder="Password">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" id="btnPhoneSignIn" class="button button-big button-fill color-green"
+                                   style="margin-top: 10px;">Sign In</a></li>
+                        </ul>
+                        <div class="list-block-label">
+                            <p style="color: #fff;">
+                                <a href="javascript:void(0)" id="btnForgotPassword">Forgot password</a> |
+                                <a href="javascript:void(0)" id="btnSignup">Sign up</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- signup screen -->
+<div class="popup popup-signup">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content login_background">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title">Sign Up</div>
+
+
+                <div class="list-block login_block block-spacing">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-user"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">First name</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="First name" id="first_name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-user"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Last name</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="Last name" id="last_name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-envelope"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">E-mail</div>
+                                    <div class="item-input">
+                                        <input type="email" placeholder="E-mail (optional)" id="account_email">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-phone"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Phone</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="Number eg 263777000000)" id="account_mobile">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br/>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-lock"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Password</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="Password" id="account_password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="fa fa-lock"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Confirm</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="Confirm password" id="confirm_password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br/>
+                    </ul>
+                    <!--<a href="#" class="button active">Sign up</a>
+                    <a href="#" class="button active">Sign up</a>-->
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="#" class="button button-medium active" id="btnCancelSignUp">Cancel</a>
+                        </div>
+                        <div class="col-50">
+                            <a href="#" class="button button-medium button-success" id="btnCreateAccount">Submit</a>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- forgot password screen -->
+<div class="popup popup-forgot-password">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content login_background">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title">Forgot Password</div>
+
+
+                <form>
+                    <div class="list-block login_block block-spacing">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-phone"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="text" name="mobile" id="reset_mobile" placeholder="Mobile">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" id="btnResetPassword" class="button button-big button-fill color-green"
+                                   style="margin-top: 10px;">Reset Password</a></li>
+                            <li><a href="javascript:void(0)" id="btnCancelForgotPassword" class="button button-big"
+                                   style="margin-top: 10px;">Cancel</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- top up  screen -->
+<div class="popup popup-topup">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content login_background">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title">Topup Code</div>
+
+
+                <form>
+                    <div class="list-block login_block block-spacing">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-code"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="text" name="topup" id="topup_code" placeholder="Topup code">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="javascript:void(0)" id="topupNow"
+                                   class="button button-big button-fill color-green"
+                                   style="margin-top: 10px;">Topup now</a></li>
+                            <li><a href="javascript:void(0)" id="btnCancelTopup" class="button button-big"
+                                   style="margin-top: 10px;">Cancel</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- report screen -->
+<div class="popup popup-report">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title" id="reportTitle">Report</div>
+
+                <form>
+                    <div class="list-block login_block block-spacing">
+                        <ul id="blue_icons">
+                            <li class="item-content align-top">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-comments-o"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <textarea
+                                                placeholder="Please provide your review here"
+                                                id="message"></textarea>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <br/>
+
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" id="btnSubmitReport" class="button button-medium button-fill color-green"
+                                   style="margin-top: 10px;">Submit</a></li>
+                        </ul>
+                        <div class="list-block-label">
+                            <p>
+                                <a href="javascript:void(0)" id="btnCancelReportbtnCancelReport" style="color: #fff;">Cancel</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- buy for friend screen -->
+<div class="popup popup-friend">
+    <div class="content-block">
+        <div data-page="login" class="page no-navbar no-toolbar no-swipeback">
+            <div class="page-content login-screen-content login_background">
+                <div class="blur-landing"></div>
+                <img src="img/logo-login.png" class="center-img" alt="">
+
+                <div class="login-screen-title">Share with Friend</div>
+
+                <form>
+                    <div class="list-block login_block block-spacing">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-mobile-phone"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="text" name="phone" id="friend_phone" placeholder="Friend`s number">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-dollar"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="text" name="phone" id="friend_amount"
+                                               placeholder="Amount to share">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner item-colors">
+                                    <div class="smaller-label item-title label"><i class="fa fa-lock"
+                                                                                   style="font-size: 20px;"></i></div>
+                                    <div class="item-input">
+                                        <input type="password" name="password" id="my_password"
+                                               placeholder="Your password">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" id="btnShareFriend" class="button button-big button-fill color-green"
+                                   style="margin-top: 10px;">BUY FOR FRIEND</a></li>
+                        </ul>
+                        <div class="list-block-label">
+                            <p style="color: #fff;">
+                                <a href="javascript:void(0)" id="cancelShare">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<script type="text/javascript" src="lib/cordova/cordova.js"></script>-->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/lodash.js"></script>
+<script type="text/javascript" src="lib/framework7.min.js"></script>
+<script type="text/javascript" src="lib/jquery/jQuery-2.1.3.min.js"></script>
+<script type="text/javascript" src="lib/cookies/js.cookie.js"></script>
+<script type="text/javascript" src="js/life_lighter_config.js"></script>
+<script type="text/javascript" src="js/life_lighter_functions.js"></script>
+<script type="text/javascript" src="js/DatabaseHandler.js"></script>
+<script type="text/javascript" src="lib/framework7.keypad.min.js"></script>
+<script type="text/javascript" src="js/welcomescreen.js"></script>
+<script type="text/javascript" src="lib/framework7.upscroller.js"></script>
+<script type="text/javascript" src="js/framework7.3dpanels.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script data-main="app" src="lib/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{#if this}}
+    <div class="content-block-title">ACCOUNT HISTORY</div>
+    <div class="card-radius-0 card">
+        <div class="list-block accordion-list">
+            <ul id="theHistory">
+                {{#each this.data}}
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                            <div class="item-title">{{ created_at }}</div>
+                        </div>
+                    </a>
+                        <div class="accordion-item-content">
+                            <div class="content-block">
+                                <p>{{ activity }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <button id="moreLogs" class="button" style="margin: 0 auto;"
+                name="{{ next_page_url }}">
+            LOAD MORE
+        </button>
+    </div>
+{{/if}}

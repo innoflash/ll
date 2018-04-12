@@ -1,0 +1,122 @@
+{{#if this}}
+    <div class="row no-gutter">
+        <div class="col-100 tablet-100">
+            <img class="full-width-image" src="img/p3.jpg" id="service_image">
+        </div>
+    </div>
+
+    <div class="card-radius-0 card">
+        <div class="card-content">
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-user"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="item-title">
+                                <b>
+                                    {{ author }}
+
+                                    {{#author author}}{{/author}}
+                                </b>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-bookmark"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="item-title">
+                                <b>
+                                    {{ main_verse }}
+                                </b>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-volume-control-phone"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="pt10">
+                                <p>
+                                    {{ main_reading }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block-title">{{ author }}</div>
+    <div class="card-radius-0 card">
+        <div class="card-content">
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-volume-control-phone"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="pt10">
+                                <p>
+                                    {{ body }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block-title">PRAYER</div>
+    <div class="card-radius-0 card">
+        <div class="card-content">
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-volume-control-phone"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="pt10">
+                                <p>
+                                   {{ prayer }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block-title">DECLARATIONS</div>
+    <div class="card-radius-0 card">
+        <div class="card-content">
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="fa fa-volume-control-phone"></i></div>
+                        <div class="item-inner item-colors-details">
+                            <div class="pt10">
+                                <p>
+                                    {{ declaration }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="messages-content card-radius-0 card">
+        <div class="messages">
+
+            <div class="message message-received">
+                <div class="message-name">Further Reading</div>
+                <div class="message-text">{{ further_reading }}</div>
+                <div class="message-text">{{ further_reading }}</div>
+                <div style="background-image:url(img/icon.png)"
+                     class="message-avatar"></div>
+            </div>
+
+        </div>
+    </div>
+{{/if}}
