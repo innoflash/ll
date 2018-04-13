@@ -34,7 +34,7 @@ define(["app", "js/date/dateView"], function (app, View) {
                 subject: data.title, // fi. for email
                 url: 'https://www.lifelighter.org',
                 chooserTitle: 'Share with' // Android only, you can override the default share sheet title
-            }
+            };
 
             var onSuccess = function (result) {
 
@@ -43,7 +43,7 @@ define(["app", "js/date/dateView"], function (app, View) {
             var onError = function (msg) {
                 console.log("Sharing failed with message: " + msg);
                 app.f7.alert("Sharing failed with message: " + msg);
-            }
+            };
 
             window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
         });

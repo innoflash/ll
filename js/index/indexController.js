@@ -125,14 +125,14 @@ define(["app", "js/index/indexView"], function (app, View) {
                         name: $('#first_name').val() + ' ' + $('#last_name').val(),
                         phone: $('#account_mobile').val(),
                         email: $('#account_email').val(),
-                        password: $('#account_password').val()
+                        password: $('#account_password').val(),
+                        auth_side: 'Direct'
                     };
                     app.f7.showPreloader('Creating your account');
                     $.ajax({
                         url: life_lighter_config.apibaseurl + "register",
                         data: user,
-                        method: 'POST',
-                        dataType: 'jsonp'
+                        method: 'POST'
                     }).success(function (data) {
                         console.log(data);
                         if (data.success == 0) {
@@ -182,8 +182,7 @@ define(["app", "js/index/indexView"], function (app, View) {
                 method: 'POST',
                 data: {
                     phone: $('#reset_mobile').val()
-                },
-                dataType: 'jsonp'
+                }
             }).error(function (e) {
                 app.f7.alert(life_lighter_mesg.servererror);
             }).success(function (data) {
