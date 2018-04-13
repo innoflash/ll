@@ -2,8 +2,8 @@
 var life_lighter_config = {
     //sitebaseurl: 'http://r8em.local/',
     sitebaseurl: 'http://localhost:8001',
-    apibaseurl: 'http://localhost:8001/api/',
-    //apibaseurl: 'https://ll-api.global-elevation.com/api/',
+    //apibaseurl: 'http://localhost:8001/api/',
+    apibaseurl: 'https://ll-api.global-elevation.com/api/',
     facebook_appid: 1629975497267060, // live
     google_map_key: 'AIzaSyBzAzhG4DS1idssr4_tjk25cEkLNiMZ_d0',
     cdnmediabaseurl: 'https://d3t0t6tewm7gyy.cloudfront.net/',
